@@ -1,11 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:skype_clone_firebase/models/user.dart';
+import 'package:skype_clone_firebase/utils/utilities.dart';
 
 class FirebaseMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   GoogleSignIn _googleSignIn = GoogleSignIn();
   static final Firestore firestore = Firestore.instance;
+
+  User user = User();
 
   Future<FirebaseUser> getCurrentuser() async {
     FirebaseUser currentUser;
@@ -34,5 +38,22 @@ class FirebaseMethods {
 
     final List<DocumentSnapshot> docs = result.documents;
     return docs.length == 0 ? true : false;
+  }
+
+  Future<void> addDataToDb(FirebaseUser currentuser) async {
+    String username = Utils.getUsername(currentuser.email);
+
+    user = User(
+      uid: currentuser.uid,
+      email: currentuser.email,
+      name: currentuser.displayName,
+      profilePhoto: currentuser.photoUrl,
+      username: username,
+    );
+
+    firestore
+        .collection("users")
+        .document(currentuser.uid)
+        .setData(user.toMap(user));
   }
 }
