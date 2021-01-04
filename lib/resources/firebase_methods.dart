@@ -25,4 +25,11 @@ class FirebaseMethods {
     FirebaseUser user = await _auth.signInWithCredential(credential);
     return user;
   }
+
+  Future<bool> authenticateUser(FirebaseUser user) async {
+    QuerySnapshot result = await firestore
+        .collection("users")
+        .where("email", isEqualTo: user.email)
+        .getDocuments();
+  }
 }
