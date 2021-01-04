@@ -31,5 +31,8 @@ class FirebaseMethods {
         .collection("users")
         .where("email", isEqualTo: user.email)
         .getDocuments();
+
+    final List<DocumentSnapshot> docs = result.documents;
+    return docs.length == 0 ? true : false;
   }
 }
