@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "203664737655",
+    "project_id": "skype-clone-firebase",
+    "storage_bucket": "skype-clone-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:203664737655:android:0a47a338e534c1dd8e4d72",
+        "android_client_info": {
+          "package_name": "com.example.skype_clone_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "203664737655-211ib5v045mc2nt88km5d7dcppgkm745.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdNq_FW08I4gL6QBuWT_Vg-iJqJtXHNwA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "203664737655-211ib5v045mc2nt88km5d7dcppgkm745.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
