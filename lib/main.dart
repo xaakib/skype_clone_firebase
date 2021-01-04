@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,12 +12,9 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    Firestore.instance.collection("users").document().setData(
-      {
-        "name": "The Xakib",
-      },
-    );
     return MaterialApp(
+      title: "Skype Clone",
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Container(),
       ),
